@@ -15,14 +15,21 @@
     <b-form-group class="label-grup" id="input-group-telefone" label="telefone:" label-for="input-Telefone">
         <b-form-input name="phone" type="text" v-model="form.phone" v-mask="'(##) #-####-####'" required placeholder="(DD) 9-9999-9999"></b-form-input>
     </b-form-group>
-      <b-button 
-      type="submit" 
-      variant="primary" 
-      :state="habilitar"
-      >Corfimar</b-button>
-
-      <b-button slot="end" type="reset" variant="danger">Limpar</b-button>
-    </b-form>
+    <b-container class="bv-example-row">
+        <b-row class="botao">
+            <b-col >
+                <b-button 
+                type="submit" 
+                variant="primary" 
+                :state="habilitar"
+                >Corfimar</b-button>
+            </b-col>
+            <b-col>
+                <b-button slot="end" type="reset" variant="danger">Limpar</b-button>
+            </b-col>
+        </b-row>
+    </b-container>
+</b-form>
 
     <b-card class="mt-3" id="relatorio" v-if="mostrarFormulario" header="Resultado do Formulario">
       <pre  class="m-0">
@@ -35,66 +42,5 @@
     </div>
 </template>
 
-
-<script>
-
-  export default {
-    name: "#formulario",
-    data() {
-      return {
-        form: {
-          nome: '',
-          email: '',
-          phone: '',
-        },
-        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-        show: true,
-        mostrarFormulario: false,
-        formularioCompleto: []
-      }
-    },
-    // computed:{
-    //     habilitar(){
-    //         return this.form.length == 3 ? true : false
-    //     }
-    // },
-    methods: {
-      onSubmit(evt) {
-        evt.preventDefault()
-        this.form
-        this.mostrarFormulario = true
-      },
-      onReset(evt) {
-        evt.preventDefault()
-        this.form.nome = ''
-        this.form.email = ''
-        this.form.phone = ''
-        this.mostrarFormulario = false
-        
-        // Trick to reset/clear native browser form validation state
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
-      }
-    }
-  }
-</script>
-
-<style>
-#formulario {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #e9ecef;
-    margin-top: 60px;
-    font-weight: bold;
-    
-}
-
-
-#relatorio{
-    color: black;
-}
-</style>
+<script src="./javaScript/formulario"></script>
+<style src="./css/formulario.css"></style>
