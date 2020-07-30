@@ -1,24 +1,18 @@
 # shell-2-brazil-front
 
-## Project setup
+## Dentro da pasra "shell-2-brazil"
+Executar os comandos abaixo pelo Git Bash here ou prompt de comando.
+
+### Executar Projeto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Depois de instalação de node_modules, executa o comando abaixo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
